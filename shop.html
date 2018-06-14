@@ -139,29 +139,354 @@
                 <div class="catagories-menu">
                     <ul>
                         <li class="active">
-                            <a href="#">Candle Fragrances</a>
+                            <button id="cndlfrg" onclick="funccndlfrg()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;">Candle Fragrances</button>
                         </li>
-                        <li>
-                            <a href="#">Clock Wall Decors</a>
+                        <script>
+                            function funccndlfrg() {
+                                // document.getElementById("cndlfrgimg").src = "https://rukminim1.flixcart.com/image/800/800/j7rxpjk0/candle-tealight-holder/g/t/z/acs500-ecraftindia-original-imaexwfcgytwsmug.jpeg?q=90";
+                                var o;
+                                function reqListener() {
+                                    o = JSON.parse(this.responseText);
+                                    console.log(o);
+                                    let arr1 = o[0].imageUrlStr.split(";");  // 0 & 2 
+                                    let arr1h = o[2].imageUrlStr.split(";"); //2 & 0
+                                    let arr2 = o[1].imageUrlStr.split(";");//1&12
+                                    let arr2h = o[12].imageUrlStr.split(";");//12&1
+                                    let arr3 = o[50].imageUrlStr.split(";");//48 & 50
+                                    let arr3h = o[48].imageUrlStr.split(";");//50 & 48
+                                    let arr4 = o[65].imageUrlStr.split(";"); //65 & 78
+                                    let arr4h = o[78].imageUrlStr.split(";"); //78 & 65
+                                    let arr5 = o[31].imageUrlStr.split(";"); // 31 & 33 
+                                    let arr5h = o[33].imageUrlStr.split(";"); //33 & 31
+                                    let arr6 = o[10].imageUrlStr.split(";"); // 10 & 28
+                                    let arr6h = o[28].imageUrlStr.split(";"); //28 & 10
+                                    document.getElementById("cndlfrgimg1").src = arr1[2];
+                                    document.getElementById("cndlfrgimg1h").src = arr1h[2];
+                                    document.getElementById("cndlfrgimg2").src = arr2[2];
+                                    document.getElementById("cndlfrgimg2h").src = arr2h[2];
+                                    document.getElementById("cndlfrgimg3").src = arr3[2];
+                                    document.getElementById("cndlfrgimg3h").src = arr3h[2];
+                                    document.getElementById("cndlfrgimg4").src = arr4[2];
+                                    document.getElementById("cndlfrgimg4h").src = arr4h[2];
+                                    document.getElementById("cndlfrgimg5").src = arr5[2];
+                                    document.getElementById("cndlfrgimg5h").src = arr5h[2];
+                                    document.getElementById("cndlfrgimg6").src = arr6[2];
+                                    document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                }
+
+                                var oReq = new XMLHttpRequest();
+                                oReq.addEventListener("load", reqListener);
+                                oReq.open("GET", "http://101.53.137.41/api/?cat=HomeDecor_Candles-Fragrances_Candles-Holders_CandleHolders&count=100&offset=0;");
+                                oReq.send();
+
+                            }
+                        </script>
+
+
+                        <li class="active">
+                            <button id="clkwall" onclick="funcclkwall()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Clock Wall Decors</button>
                         </li>
-                        <li>
-                            <a href="#">Flower Vases</a>
+                        <script>
+                            function funcclkwall() {
+                                var p;
+                                function reqListener1() {
+                                    p = JSON.parse(this.responseText);
+                                    console.log(p);
+                                    let arr1 = p[99].imageUrlStr.split(";");  // 99 & 98 
+                                    let arr1h = p[98].imageUrlStr.split(";"); // 98 & 99
+                                    let arr2 = p[67].imageUrlStr.split(";");// 67 & 12
+                                    let arr2h = p[12].imageUrlStr.split(";");// 12 & 67
+                                    let arr3 = p[58].imageUrlStr.split(";");//58 & 83
+                                    let arr3h = p[83].imageUrlStr.split(";");// 83 & 58
+                                    let arr4 = p[65].imageUrlStr.split(";"); //65 & 78
+                                    let arr4h = p[78].imageUrlStr.split(";"); //78 & 65
+                                    let arr5 = p[39].imageUrlStr.split(";"); // 39 & 63 
+                                    let arr5h = p[63].imageUrlStr.split(";"); //63 & 39
+                                    let arr6 = p[64].imageUrlStr.split(";"); // 64 & 17
+                                    let arr6h = p[17].imageUrlStr.split(";"); // 17 & 64
+                                    document.getElementById("cndlfrgimg1").src = arr1[2];
+                                    document.getElementById("cndlfrgimg1h").src = arr1h[2];
+                                    document.getElementById("cndlfrgimg2").src = arr2[2];
+                                    document.getElementById("cndlfrgimg2h").src = arr2h[2];
+                                    document.getElementById("cndlfrgimg3").src = arr3[2];
+                                    document.getElementById("cndlfrgimg3h").src = arr3h[2];
+                                    document.getElementById("cndlfrgimg4").src = arr4[2];
+                                    document.getElementById("cndlfrgimg4h").src = arr4h[2];
+                                    document.getElementById("cndlfrgimg5").src = arr5[2];
+                                    document.getElementById("cndlfrgimg5h").src = arr5h[2];
+                                    document.getElementById("cndlfrgimg6").src = arr6[2];
+                                    document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                }
+
+                                var oReq = new XMLHttpRequest();
+                                oReq.addEventListener("load", reqListener1);
+                                oReq.open("GET", "http://101.53.137.41/api/?cat=HomeDecor_Clocks-WallDecor_Clocks_WallClocks&count=100&offset=0;");
+                                oReq.send();
+
+                            }
+
+                        </script>
+
+                        <li class="active">
+                            <button id="cndlfrg" onclick="funcflowervase()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Flower Vases</button>
                         </li>
-                        <li>
-                            <a href="#">Garden Decors</a>
+                        <script>
+                            function funcflowervase() {
+                                var q;
+                                function reqListener2() {
+                                    q = JSON.parse(this.responseText);
+                                    console.log(q);
+                                    let arr1 = q[53].imageUrlStr.split(";");  // 53 & 8 
+                                    let arr1h = q[8].imageUrlStr.split(";"); // 8 & 53
+                                    let arr2 = q[49].imageUrlStr.split(";");// 49 & 51
+                                    let arr2h = q[51].imageUrlStr.split(";");// 51 & 49
+                                    let arr3 = q[83].imageUrlStr.split(";");//83 & 78
+                                    let arr3h = q[78].imageUrlStr.split(";");// 78 & 83
+                                    let arr4 = q[22].imageUrlStr.split(";"); //22 & 73
+                                    let arr4h = q[73].imageUrlStr.split(";"); //73 & 22
+                                    let arr5 = q[39].imageUrlStr.split(";"); // 39 & 63 
+                                    let arr5h = q[63].imageUrlStr.split(";"); //63 & 39
+                                    let arr6 = q[82].imageUrlStr.split(";"); // 82 & 84
+                                    let arr6h = q[84].imageUrlStr.split(";"); // 82 & 84
+                                    document.getElementById("cndlfrgimg1").src = arr1[2];
+                                    document.getElementById("cndlfrgimg1h").src = arr1h[2];
+                                    document.getElementById("cndlfrgimg2").src = arr2[2];
+                                    document.getElementById("cndlfrgimg2h").src = arr2h[2];
+                                    document.getElementById("cndlfrgimg3").src = arr3[2];
+                                    document.getElementById("cndlfrgimg3h").src = arr3h[2];
+                                    document.getElementById("cndlfrgimg4").src = arr4[2];
+                                    document.getElementById("cndlfrgimg4h").src = arr4h[2];
+                                    document.getElementById("cndlfrgimg5").src = arr5[2];
+                                    document.getElementById("cndlfrgimg5h").src = arr5h[2];
+                                    document.getElementById("cndlfrgimg6").src = arr6[2];
+                                    document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                }
+
+                                var oReq = new XMLHttpRequest();
+                                oReq.addEventListener("load", reqListener2);
+                                oReq.open("GET", "http://101.53.137.41/api/?cat=HomeDecor_Flowers-Vases_VaseFillers&count=100&offset=0;");
+                                oReq.send();
+
+                            }
+
+                        </script>
+                        <li class="active">
+                            <button id="gardendec" onclick="funcgardendec()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Garden Decors</button>
                         </li>
-                        <li>
-                            <a href="#">Home Utilities</a>
+                        <script>
+                            function funcgardendec() {
+                                var r;
+                                function reqListener3() {
+                                    r = JSON.parse(this.responseText);
+                                    console.log(r);
+                                    let arr1 = r[14].imageUrlStr.split(";");  // 14 & 8
+                                    let arr1h = r[8].imageUrlStr.split(";"); // 8 & 14
+                                    let arr2 = r[6].imageUrlStr.split(";");// 6 & 13
+                                    let arr2h = r[13].imageUrlStr.split(";");// 13 & 6
+                                    let arr3 = r[91].imageUrlStr.split(";");// 91 & 72
+                                    let arr3h = r[72].imageUrlStr.split(";");// 72 & 91
+                                    let arr4 = r[43].imageUrlStr.split(";"); //43 & 40
+                                    let arr4h = r[40].imageUrlStr.split(";"); //40 & 43
+                                    let arr5 = r[39].imageUrlStr.split(";"); // 39 & 18 
+                                    let arr5h = r[18].imageUrlStr.split(";"); //18 & 39
+                                    let arr6 = r[65].imageUrlStr.split(";"); // 64 & 65
+                                    let arr6h = r[64].imageUrlStr.split(";"); // 65 & 64
+                                    document.getElementById("cndlfrgimg1").src = arr1[2];
+                                    document.getElementById("cndlfrgimg1h").src = arr1h[2];
+                                    document.getElementById("cndlfrgimg2").src = arr2[2];
+                                    document.getElementById("cndlfrgimg2h").src = arr2h[2];
+                                    document.getElementById("cndlfrgimg3").src = arr3[2];
+                                    document.getElementById("cndlfrgimg3h").src = arr3h[2];
+                                    document.getElementById("cndlfrgimg4").src = arr4[2];
+                                    document.getElementById("cndlfrgimg4h").src = arr4h[2];
+                                    document.getElementById("cndlfrgimg5").src = arr5[2];
+                                    document.getElementById("cndlfrgimg5h").src = arr5h[2];
+                                    document.getElementById("cndlfrgimg6").src = arr6[2];
+                                    document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                }
+
+                                var oReq = new XMLHttpRequest();
+                                oReq.addEventListener("load", reqListener3);
+                                oReq.open("GET", "http://101.53.137.41/api/?cat=HomeDecor_GardenDecor_Windchimes&count=100&offset=0;");
+                                oReq.send();
+
+                            }
+
+                        </script>
+                        <li class="active">
+                            <button id="homeuti" onclick="funchomeuti()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Home Utilities</button>
                         </li>
-                        <li>
-                            <a href="#">Light Lamps</a>
+                        <script>
+                            function funchomeuti() {
+                                var s;
+                                function reqListener5() {
+                                    s = JSON.parse(this.responseText);
+                                    console.log(s);
+                                    let arr1 = s[14].imageUrlStr.split(";");
+                                    console.log(arr1);  // 14 & 8
+                                    let arr1h = s[8].imageUrlStr.split(";"); // 8 & 14
+                                    let arr2 = s[6].imageUrlStr.split(";");// 6 & 13
+                                    let arr2h = s[13].imageUrlStr.split(";");// 13 & 6
+                                    let arr3 = s[91].imageUrlStr.split(";");// 91 & 72
+                                    let arr3h = s[72].imageUrlStr.split(";");// 72 & 91
+                                    let arr4 = s[43].imageUrlStr.split(";"); //43 & 40
+                                    let arr4h = s[40].imageUrlStr.split(";"); //40 & 43
+                                    let arr5 = s[39].imageUrlStr.split(";"); // 39 & 18 
+                                    let arr5h = s[18].imageUrlStr.split(";"); //18 & 39
+                                    let arr6 = s[65].imageUrlStr.split(";"); // 64 & 65
+                                    let arr6h = s[64].imageUrlStr.split(";"); // 65 & 64
+                                    document.getElementById("cndlfrgimg1").src = arr1[2];
+                                    document.getElementById("cndlfrgimg1h").src = arr1h[2];
+                                    document.getElementById("cndlfrgimg2").src = arr2[2];
+                                    document.getElementById("cndlfrgimg2h").src = arr2h[2];
+                                    document.getElementById("cndlfrgimg3").src = arr3[2];
+                                    document.getElementById("cndlfrgimg3h").src = arr3h[2];
+                                    document.getElementById("cndlfrgimg4").src = arr4[2];
+                                    document.getElementById("cndlfrgimg4h").src = arr4h[2];
+                                    document.getElementById("cndlfrgimg5").src = arr5[2];
+                                    document.getElementById("cndlfrgimg5h").src = arr5h[2];
+                                    document.getElementById("cndlfrgimg6").src = arr6[2];
+                                    document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                }
+
+                                var oReq = new XMLHttpRequest();
+                                oReq.addEventListener("load", reqListener5);
+                                oReq.open("GET", "http://101.53.137.41/api/?cat=HomeDecor_HomeUtilities_BookEnds&count=100&offset=0;");
+                                oReq.send();
+
+                            }
+
+                        </script>
+                        <li class="active">
+                            <button id="lamplight" onclick="funclightlamp()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Light Lamps</button>
                         </li>
-                        <li>
-                            <a href="#">Spiritual Festive Decors</a>
+                        <script>
+                            function funclightlamp() {
+                                var t;
+                                function reqListener6() {
+                                    t = JSON.parse(this.responseText);
+                                    console.log(t);
+                                    let arr1 = t[98].imageUrlStr.split(";");  // 98 & 89
+                                    let arr1h = t[89].imageUrlStr.split(";"); // 89 & 98
+                                    let arr2 = t[29].imageUrlStr.split(";");// 29 & 27
+                                    let arr2h = t[27].imageUrlStr.split(";");// 27 & 29
+                                    let arr3 = t[6].imageUrlStr.split(";");// 6 & 7
+                                    let arr3h = t[7].imageUrlStr.split(";");// 7 & 6
+                                    let arr4 = t[43].imageUrlStr.split(";"); //43 & 72
+                                    let arr4h = t[72].imageUrlStr.split(";"); //72 & 43
+                                    let arr5 = t[18].imageUrlStr.split(";"); //  18 & 40 
+                                    let arr5h = t[40].imageUrlStr.split(";"); //40 & 18
+                                    let arr6 = t[65].imageUrlStr.split(";"); // 64 & 65
+                                    let arr6h = t[64].imageUrlStr.split(";"); // 65 & 64
+                                    document.getElementById("cndlfrgimg1").src = arr1[2];
+                                    document.getElementById("cndlfrgimg1h").src = arr1h[2];
+                                    document.getElementById("cndlfrgimg2").src = arr2[2];
+                                    document.getElementById("cndlfrgimg2h").src = arr2h[2];
+                                    document.getElementById("cndlfrgimg3").src = arr3[2];
+                                    document.getElementById("cndlfrgimg3h").src = arr3h[2];
+                                    document.getElementById("cndlfrgimg4").src = arr4[2];
+                                    document.getElementById("cndlfrgimg4h").src = arr4h[2];
+                                    document.getElementById("cndlfrgimg5").src = arr5[2];
+                                    document.getElementById("cndlfrgimg5h").src = arr5h[2];
+                                    document.getElementById("cndlfrgimg6").src = arr6[2];
+                                    document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                }
+
+                                var oReq = new XMLHttpRequest();
+                                oReq.addEventListener("load", reqListener6);
+                                oReq.open("GET", "http://101.53.137.41/api/?cat=HomeDecor_Lights-Lamps_WallLamps&count=100&offset=0;");
+                                oReq.send();
+
+                            }
+
+                        </script>
+
+                        <li class="active">
+                            <button id="festivedec" onclick="funcfestivedec()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Spiritual Festive Decors</button>
                         </li>
-                        <li>
-                            <a href="#">Table Decors</a>
+                        <script>
+                            function funcfestivedec() {
+                                var u;
+                                function reqListener7() {
+                                    u = JSON.parse(this.responseText);
+                                    console.log(u);
+                                    let arr1 = u[98].imageUrlStr.split(";");  // 98 & 89
+                                    let arr1h = u[89].imageUrlStr.split(";"); // 89 & 98
+                                    let arr2 = u[29].imageUrlStr.split(";");// 29 & 27
+                                    let arr2h = u[27].imageUrlStr.split(";");// 27 & 29
+                                    let arr3 = u[6].imageUrlStr.split(";");// 6 & 7
+                                    let arr3h = u[7].imageUrlStr.split(";");// 7 & 6
+                                    let arr4 = u[43].imageUrlStr.split(";"); //43 & 72
+                                    let arr4h = u[72].imageUrlStr.split(";"); //72 & 43
+                                    let arr5 = u[18].imageUrlStr.split(";"); //  18 & 40 
+                                    let arr5h = u[40].imageUrlStr.split(";"); //40 & 18
+                                    let arr6 = u[65].imageUrlStr.split(";"); // 64 & 65
+                                    let arr6h = u[64].imageUrlStr.split(";"); // 65 & 64
+                                    document.getElementById("cndlfrgimg1").src = arr1[2];
+                                    document.getElementById("cndlfrgimg1h").src = arr1h[2];
+                                    document.getElementById("cndlfrgimg2").src = arr2[2];
+                                    document.getElementById("cndlfrgimg2h").src = arr2h[2];
+                                    document.getElementById("cndlfrgimg3").src = arr3[2];
+                                    document.getElementById("cndlfrgimg3h").src = arr3h[2];
+                                    document.getElementById("cndlfrgimg4").src = arr4[2];
+                                    document.getElementById("cndlfrgimg4h").src = arr4h[2];
+                                    document.getElementById("cndlfrgimg5").src = arr5[2];
+                                    document.getElementById("cndlfrgimg5h").src = arr5h[2];
+                                    document.getElementById("cndlfrgimg6").src = arr6[2];
+                                    document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                }
+
+                                var oReq = new XMLHttpRequest();
+                                oReq.addEventListener("load", reqListener7);
+                                oReq.open("GET", "http://101.53.137.41/api/?cat=HomeDecor_Spiritual-FestiveDecor_SpiritualDecor_LordJhulas&count=100&offset=0;");
+                                oReq.send();
+
+                            }
+
+                        </script>
+                        <li class="active">
+                            <button id="tabledec" onclick="functabledec()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Table Decors</button>
                         </li>
+                        <script>
+                            function functabledec() {
+                                var v;
+                                function reqListener8() {
+                                    v = JSON.parse(this.responseText);
+                                    console.log(v);
+                                    let arr1 = v[1].imageUrlStr.split(";");  // 98 & 89
+                                    let arr1h = v[29].imageUrlStr.split(";"); // 89 & 98
+                                    let arr2 = v[22].imageUrlStr.split(";");// 29 & 27
+                                    let arr2h = v[27].imageUrlStr.split(";");// 27 & 29
+                                    let arr3 = v[17].imageUrlStr.split(";");// 6 & 7
+                                    let arr3h = v[19].imageUrlStr.split(";");// 7 & 6
+                                    let arr4 = v[57].imageUrlStr.split(";"); //43 & 72
+                                    let arr4h = v[68].imageUrlStr.split(";"); //72 & 43
+                                    let arr5 = v[90].imageUrlStr.split(";"); //  18 & 40 
+                                    let arr5h = v[98].imageUrlStr.split(";"); //40 & 18
+                                    let arr6 = v[60].imageUrlStr.split(";"); // 64 & 65
+                                    let arr6h = v[66].imageUrlStr.split(";"); // 65 & 64
+                                    document.getElementById("cndlfrgimg1").src = arr1[2];
+                                    document.getElementById("cndlfrgimg1h").src = arr1h[2];
+                                    document.getElementById("cndlfrgimg2").src = arr2[2];
+                                    document.getElementById("cndlfrgimg2h").src = arr2h[2];
+                                    document.getElementById("cndlfrgimg3").src = arr3[2];
+                                    document.getElementById("cndlfrgimg3h").src = arr3h[2];
+                                    document.getElementById("cndlfrgimg4").src = arr4[2];
+                                    document.getElementById("cndlfrgimg4h").src = arr4h[2];
+                                    document.getElementById("cndlfrgimg5").src = arr5[2];
+                                    document.getElementById("cndlfrgimg5h").src = arr5h[2];
+                                    document.getElementById("cndlfrgimg6").src = arr6[2];
+                                    document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                }
+
+                                var oReq = new XMLHttpRequest();
+                                oReq.addEventListener("load", reqListener8);
+                                oReq.open("GET", "http://101.53.137.41/api/?cat=HomeDecor_TableDecor-Handicrafts_TableDecor_Showpieces&count=100&offset=0;");
+                                oReq.send();
+
+                            }
+
+                        </script>
                     </ul>
                 </div>
             </div>
@@ -307,9 +632,10 @@
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="img/product-img/product1.jpg" alt="">
+                                <!-- <img id="cndlfrgimg" src="img/product-img/product1.jpg" alt=""> -->
+                                <img id="cndlfrgimg1" src="img/product-img/product1.jpg" alt="">
                                 <!-- Hover Thumb -->
-                                <img class="hover-img" src="img/product-img/product2.jpg" alt="">
+                                <img class="hover-img" id="cndlfrgimg1h" src="img/product-img/product2.jpg" alt="">
                             </div>
 
                             <!-- Product Description -->
@@ -346,9 +672,9 @@
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="img/product-img/product2.jpg" alt="">
+                                <img id="cndlfrgimg2" src="img/product-img/product2.jpg" alt="">
                                 <!-- Hover Thumb -->
-                                <img class="hover-img" src="img/product-img/product3.jpg" alt="">
+                                <img class="hover-img" id="cndlfrgimg2h" src="img/product-img/product3.jpg" alt="">
                             </div>
 
                             <!-- Product Description -->
@@ -385,9 +711,9 @@
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="img/product-img/product3.jpg" alt="">
+                                <img id="cndlfrgimg3" src="img/product-img/product3.jpg" alt="">
                                 <!-- Hover Thumb -->
-                                <img class="hover-img" src="img/product-img/product4.jpg" alt="">
+                                <img class="hover-img" id="cndlfrgimg3h" src="img/product-img/product4.jpg" alt="">
                             </div>
 
                             <!-- Product Description -->
@@ -424,9 +750,9 @@
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="img/product-img/product4.jpg" alt="">
+                                <img id="cndlfrgimg4" src="img/product-img/product4.jpg" alt="">
                                 <!-- Hover Thumb -->
-                                <img class="hover-img" src="img/product-img/product5.jpg" alt="">
+                                <img class="hover-img" id="cndlfrgimg4h" src="img/product-img/product5.jpg" alt="">
                             </div>
 
                             <!-- Product Description -->
@@ -463,9 +789,9 @@
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="img/product-img/product5.jpg" alt="">
+                                <img id="cndlfrgimg5" src="img/product-img/product5.jpg" alt="">
                                 <!-- Hover Thumb -->
-                                <img class="hover-img" src="img/product-img/product6.jpg" alt="">
+                                <img id="cndlfrgimg5h" class="hover-img" src="img/product-img/product6.jpg" alt="">
                             </div>
 
                             <!-- Product Description -->
@@ -502,9 +828,9 @@
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="img/product-img/product6.jpg" alt="">
+                                <img id="cndlfrgimg6" src="img/product-img/product6.jpg" alt="">
                                 <!-- Hover Thumb -->
-                                <img class="hover-img" src="img/product-img/product1.jpg" alt="">
+                                <img class="hover-img" id="cndlfrgimg6h" src="img/product-img/product1.jpg" alt="">
                             </div>
 
                             <!-- Product Description -->
