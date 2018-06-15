@@ -18,6 +18,22 @@
     <link rel="stylesheet" href="css/core-style.css">
     <link rel="stylesheet" href="style.css">
 
+
+    <style>
+        .grab {
+            cursor: -webkit-grab;
+            cursor: grab;
+            animation: linear(0.075, 0.82, 0.165, 1);
+            font-family: sans-serif;
+        }
+
+        .grab:hover {
+            border: 1px solid black;
+            background-color: #f8fa79;
+            box-shadow: 1px 2px;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -83,9 +99,9 @@
                     <li class="active">
                         <a href="shop.html">Shop</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="product-details.html">Product</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="cart.html">Cart</a>
                     </li>
@@ -102,8 +118,8 @@
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
                 <a href="cart.html" class="cart-nav">
-                    <img src="img/core-img/cart.png" alt=""> Cart
-                    <span>(0)</span>
+                    <img src="img/core-img/cart.png" alt=""> Cart (
+                    <span id="cart">0</span>)
                 </a>
                 <a href="#" class="fav-nav">
                     <img src="img/core-img/favorites.png" alt=""> Favourite</a>
@@ -139,10 +155,11 @@
                 <div class="catagories-menu">
                     <ul>
                         <li class="active">
-                            <button id="cndlfrg" onclick="funccndlfrg()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;">Candle Fragrances</button>
+                            <a id="cndlfrg" class="grab" value="click" onclick="funccndlfrg();incr(1);">Candle Fragrances</a>
                         </li>
                         <script>
                             function funccndlfrg() {
+                                // incr(   );
                                 // document.getElementById("cndlfrgimg").src = "https://rukminim1.flixcart.com/image/800/800/j7rxpjk0/candle-tealight-holder/g/t/z/acs500-ecraftindia-original-imaexwfcgytwsmug.jpeg?q=90";
                                 var o;
                                 function reqListener() {
@@ -172,6 +189,18 @@
                                     document.getElementById("cndlfrgimg5h").src = arr5h[2];
                                     document.getElementById("cndlfrgimg6").src = arr6[2];
                                     document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                    document.getElementById("cndlfrgprice1").innerHTML = o[0].sellingPrice;
+                                    document.getElementById("cndlfrgprice2").innerHTML = o[1].sellingPrice;
+                                    document.getElementById("cndlfrgprice3").innerHTML = o[50].sellingPrice;
+                                    document.getElementById("cndlfrgprice4").innerHTML = o[65].sellingPrice;
+                                    document.getElementById("cndlfrgprice5").innerHTML = o[31].sellingPrice;
+                                    document.getElementById("cndlfrgprice6").innerHTML = o[10].sellingPrice;
+                                    document.getElementById("cndlfrgtit1").innerHTML = o[0].title;
+                                    document.getElementById("cndlfrgtit2").innerHTML = o[1].title;
+                                    document.getElementById("cndlfrgtit3").innerHTML = o[50].title;
+                                    document.getElementById("cndlfrgtit4").innerHTML = o[65].title;
+                                    document.getElementById("cndlfrgtit5").innerHTML = o[31].title;
+                                    document.getElementById("cndlfrgtit6").innerHTML = o[10].title;
                                 }
 
                                 var oReq = new XMLHttpRequest();
@@ -184,7 +213,7 @@
 
 
                         <li class="active">
-                            <button id="clkwall" onclick="funcclkwall()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Clock Wall Decors</button>
+                            <a id="clkwall" onclick="funcclkwall();incr(2);" class="grab">Clock Wall Decors</a>
                         </li>
                         <script>
                             function funcclkwall() {
@@ -216,6 +245,21 @@
                                     document.getElementById("cndlfrgimg5h").src = arr5h[2];
                                     document.getElementById("cndlfrgimg6").src = arr6[2];
                                     document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                    document.getElementById("cndlfrgprice1").innerHTML = p[99].sellingPrice;
+                                    document.getElementById("cndlfrgprice2").innerHTML = p[67].sellingPrice;
+                                    document.getElementById("cndlfrgprice3").innerHTML = p[58].sellingPrice;
+                                    document.getElementById("cndlfrgprice4").innerHTML = p[65].sellingPrice;
+                                    document.getElementById("cndlfrgprice5").innerHTML = p[39].sellingPrice;
+                                    document.getElementById("cndlfrgprice6").innerHTML = p[64].sellingPrice;
+                                    document.getElementById("cndlfrgtit1").innerHTML = p[99].title;
+                                    document.getElementById("cndlfrgtit2").innerHTML = p[67].title;
+                                    document.getElementById("cndlfrgtit3").innerHTML = p[58].title;
+                                    document.getElementById("cndlfrgtit4").innerHTML = p[65].title;
+                                    document.getElementById("cndlfrgtit5").innerHTML = p[39].title;
+                                    document.getElementById("cndlfrgtit6").innerHTML = p[64].title;
+
+
+
                                 }
 
                                 var oReq = new XMLHttpRequest();
@@ -228,7 +272,7 @@
                         </script>
 
                         <li class="active">
-                            <button id="cndlfrg" onclick="funcflowervase()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Flower Vases</button>
+                            <a id="cndlfrg" onclick="funcflowervase();incr(3);" class="grab">Flower Vases</a>
                         </li>
                         <script>
                             function funcflowervase() {
@@ -260,6 +304,18 @@
                                     document.getElementById("cndlfrgimg5h").src = arr5h[2];
                                     document.getElementById("cndlfrgimg6").src = arr6[2];
                                     document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                    document.getElementById("cndlfrgprice1").innerHTML = q[53].sellingPrice;
+                                    document.getElementById("cndlfrgprice2").innerHTML = q[49].sellingPrice;
+                                    document.getElementById("cndlfrgprice3").innerHTML = q[83].sellingPrice;
+                                    document.getElementById("cndlfrgprice4").innerHTML = q[22].sellingPrice;
+                                    document.getElementById("cndlfrgprice5").innerHTML = q[39].sellingPrice;
+                                    document.getElementById("cndlfrgprice6").innerHTML = q[82].sellingPrice;
+                                    document.getElementById("cndlfrgtit1").innerHTML = q[53].title;
+                                    document.getElementById("cndlfrgtit2").innerHTML = q[49].title;
+                                    document.getElementById("cndlfrgtit3").innerHTML = q[83].title;
+                                    document.getElementById("cndlfrgtit4").innerHTML = q[22].title;
+                                    document.getElementById("cndlfrgtit5").innerHTML = q[39].title;
+                                    document.getElementById("cndlfrgtit6").innerHTML = q[82].title;
                                 }
 
                                 var oReq = new XMLHttpRequest();
@@ -271,7 +327,7 @@
 
                         </script>
                         <li class="active">
-                            <button id="gardendec" onclick="funcgardendec()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Garden Decors</button>
+                            <a id="gardendec" onclick="funcgardendec();incr(4);" class="grab">Garden Decors</a>
                         </li>
                         <script>
                             function funcgardendec() {
@@ -303,6 +359,18 @@
                                     document.getElementById("cndlfrgimg5h").src = arr5h[2];
                                     document.getElementById("cndlfrgimg6").src = arr6[2];
                                     document.getElementById("cndlfrgimg6h").src = arr6h[2];
+                                    document.getElementById("cndlfrgprice1").innerHTML = r[14].sellingPrice;
+                                    document.getElementById("cndlfrgprice2").innerHTML = r[6].sellingPrice;
+                                    document.getElementById("cndlfrgprice3").innerHTML = r[91].sellingPrice;
+                                    document.getElementById("cndlfrgprice4").innerHTML = r[43].sellingPrice;
+                                    document.getElementById("cndlfrgprice5").innerHTML = r[39].sellingPrice;
+                                    document.getElementById("cndlfrgprice6").innerHTML = r[65].sellingPrice;
+                                    document.getElementById("cndlfrgtit1").innerHTML = r[14].title;
+                                    document.getElementById("cndlfrgtit2").innerHTML = r[6].title;
+                                    document.getElementById("cndlfrgtit3").innerHTML = r[91].title;
+                                    document.getElementById("cndlfrgtit4").innerHTML = r[43].title;
+                                    document.getElementById("cndlfrgtit5").innerHTML = r[39].title;
+                                    document.getElementById("cndlfrgtit6").innerHTML = r[65].title;
                                 }
 
                                 var oReq = new XMLHttpRequest();
@@ -314,7 +382,7 @@
 
                         </script>
                         <li class="active">
-                            <button id="homeuti" onclick="funchomeuti()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Home Utilities</button>
+                            <a id="homeuti" onclick="funchomeuti();incr(5);" class="grab">Home Utilities</a>
                         </li>
                         <script>
                             function funchomeuti() {
@@ -358,7 +426,7 @@
 
                         </script>
                         <li class="active">
-                            <button id="lamplight" onclick="funclightlamp()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Light Lamps</button>
+                            <a id="lamplight" onclick="funclightlamp();incr(6);" class="grab">Light Lamps</a>
                         </li>
                         <script>
                             function funclightlamp() {
@@ -402,7 +470,7 @@
                         </script>
 
                         <li class="active">
-                            <button id="festivedec" onclick="funcfestivedec()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Spiritual Festive Decors</button>
+                            <a id="festivedec" onclick="funcfestivedec();incr(7);" class="grab">Spiritual Festive Decors</a>
                         </li>
                         <script>
                             function funcfestivedec() {
@@ -423,6 +491,7 @@
                                     let arr6 = u[65].imageUrlStr.split(";"); // 64 & 65
                                     let arr6h = u[64].imageUrlStr.split(";"); // 65 & 64
                                     document.getElementById("cndlfrgimg1").src = arr1[2];
+
                                     document.getElementById("cndlfrgimg1h").src = arr1h[2];
                                     document.getElementById("cndlfrgimg2").src = arr2[2];
                                     document.getElementById("cndlfrgimg2h").src = arr2h[2];
@@ -445,7 +514,7 @@
 
                         </script>
                         <li class="active">
-                            <button id="tabledec" onclick="functabledec()" class="btn btn-warning" style="opacity: 0.5;border:1px solid black;margin-top: 15px;">Table Decors</button>
+                            <a id="tabledec" onclick="functabledec();incr(8);" class="grab">Table Decors</a>
                         </li>
                         <script>
                             function functabledec() {
@@ -643,9 +712,11 @@
                                 <!-- Product Meta Data -->
                                 <div class="product-meta-data">
                                     <div class="line"></div>
-                                    <p class="product-price">$180</p>
+                                    <p class="product-price">$
+                                        <span id="cndlfrgprice1">180</span>
+                                    </p>
                                     <a href="product-details.html">
-                                        <h6>Modern Chair</h6>
+                                        <h6 id="cndlfrgtit1">Modern Chair</h6>
                                     </a>
                                 </div>
                                 <!-- Ratings & Cart -->
@@ -658,7 +729,7 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
                                     <div class="cart">
-                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart">
+                                        <a id="f1" onclick="clickCounter(id)" data-toggle="tooltip" data-placement="left" title="Add to Cart">
                                             <img src="img/core-img/cart.png" alt="">
                                         </a>
                                     </div>
@@ -682,9 +753,11 @@
                                 <!-- Product Meta Data -->
                                 <div class="product-meta-data">
                                     <div class="line"></div>
-                                    <p class="product-price">$180</p>
+                                    <p class="product-price">$
+                                        <span id="cndlfrgprice2">180</span>
+                                    </p>
                                     <a href="product-details.html">
-                                        <h6>Modern Chair</h6>
+                                        <h6 id="cndlfrgtit2">Modern Chair</h6>
                                     </a>
                                 </div>
                                 <!-- Ratings & Cart -->
@@ -697,7 +770,7 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
                                     <div class="cart">
-                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart">
+                                        <a id="f2" onclick="clickCounter(id)" data-toggle="tooltip" data-placement="left" title="Add to Cart">
                                             <img src="img/core-img/cart.png" alt="">
                                         </a>
                                     </div>
@@ -721,9 +794,11 @@
                                 <!-- Product Meta Data -->
                                 <div class="product-meta-data">
                                     <div class="line"></div>
-                                    <p class="product-price">$180</p>
+                                    <p class="product-price">$
+                                        <span id="cndlfrgprice3">180</span>
+                                    </p>
                                     <a href="product-details.html">
-                                        <h6>Modern Chair</h6>
+                                        <h6 id="cndlfrgtit3">Modern Chair</h6>
                                     </a>
                                 </div>
                                 <!-- Ratings & Cart -->
@@ -736,7 +811,7 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
                                     <div class="cart">
-                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart">
+                                        <a id="f3" onclick="clickCounter(id)" data-toggle="tooltip" data-placement="left" title="Add to Cart">
                                             <img src="img/core-img/cart.png" alt="">
                                         </a>
                                     </div>
@@ -760,9 +835,11 @@
                                 <!-- Product Meta Data -->
                                 <div class="product-meta-data">
                                     <div class="line"></div>
-                                    <p class="product-price">$180</p>
+                                    <p class="product-price">$
+                                        <span id="cndlfrgprice4">180</span>
+                                    </p>
                                     <a href="product-details.html">
-                                        <h6>Modern Chair</h6>
+                                        <h6 id="cndlfrgtit4">Modern Chair</h6>
                                     </a>
                                 </div>
                                 <!-- Ratings & Cart -->
@@ -775,7 +852,7 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
                                     <div class="cart">
-                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart">
+                                        <a id="f4" onclick="clickCounter(id)" data-toggle="tooltip" data-placement="left" title="Add to Cart">
                                             <img src="img/core-img/cart.png" alt="">
                                         </a>
                                     </div>
@@ -799,9 +876,11 @@
                                 <!-- Product Meta Data -->
                                 <div class="product-meta-data">
                                     <div class="line"></div>
-                                    <p class="product-price">$180</p>
+                                    <p class="product-price">$
+                                        <span id="cndlfrgprice5">180</span>
+                                    </p>
                                     <a href="product-details.html">
-                                        <h6>Modern Chair</h6>
+                                        <h6 id="cndlfrgtit5">Modern Chair</h6>
                                     </a>
                                 </div>
                                 <!-- Ratings & Cart -->
@@ -814,7 +893,7 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
                                     <div class="cart">
-                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart">
+                                        <a id="f5 " onclick="clickCounter(id)" data-toggle="tooltip" data-placement="left" title="Add to Cart">
                                             <img src="img/core-img/cart.png" alt="">
                                         </a>
                                     </div>
@@ -838,9 +917,11 @@
                                 <!-- Product Meta Data -->
                                 <div class="product-meta-data">
                                     <div class="line"></div>
-                                    <p class="product-price">$180</p>
+                                    <p class="product-price">$
+                                        <span id="cndlfrgprice6">180</span>
+                                    </p>
                                     <a href="product-details.html">
-                                        <h6>Modern Chair</h6>
+                                        <h6 id="cndlfrgtit6">Modern Chair</h6>
                                     </a>
                                 </div>
                                 <!-- Ratings & Cart -->
@@ -853,7 +934,7 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
                                     <div class="cart">
-                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart">
+                                        <a id="f6 " onclick="clickCounter(id)" data-toggle="tooltip" data-placement="left" title="Add to Cart">
                                             <img src="img/core-img/cart.png" alt="">
                                         </a>
                                     </div>
@@ -889,6 +970,26 @@
     </div>
     <!-- ##### Main Content Wrapper End ##### -->
 
+    <!-- Single Catagory 
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img id="clkwallimg" src="img/bg-img/9.jpg" alt="">
+                        <!-- Hover Content 
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>From $
+                                <span id="clkwallprice">180</span>
+                            </p>
+                            <h4 id="clkwalltit">Modern Chair</h4>
+                        </div>
+                    </a>
+                </div>-->
+    </div>
+    </div>
+    <!-- Product Catagories Area End -->
+    </div>
+    <!-- ##### Main Content Wrapper End ##### -->
+
     <!-- ##### Newsletter Area Start ##### -->
     <section class="newsletter-area section-padding-100-0">
         <div class="container">
@@ -897,10 +998,9 @@
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="newsletter-text mb-100">
                         <h2>Subscribe for a
-                            <span>25% Discount</span>
+                            <span>25% flat Discount</span>
                         </h2>
-                        <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate consectetur. Donec
-                            auctor interdum purus, ac finibus massa bibendum nec.</p>
+                        <p>Get notified by us on new upcommings! </p>
                     </div>
                 </div>
                 <!-- Newsletter Form -->
@@ -921,58 +1021,23 @@
     <footer class="footer_area clearfix">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Single Widget Area -->
+                Single Widget Area
                 <div class="col-12 col-lg-4">
                     <div class="single_widget_area">
-                        <!-- Logo -->
-                        <div class="footer-logo mr-50">
-                            <a href="index.html">
-                                <img src="img/core-img/logo2.png" alt="">
-                            </a>
-                        </div>
                         <!-- Copywrite Text -->
-                        <p class="copywrite">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
-                            <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                            <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <center>
+                            <p class="copywrite" style="font-size:20px!;">
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | Made with
+                                <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                                <a href="#" target="_blank">Harshit</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </center>
+
                     </div>
                 </div>
                 <!-- Single Widget Area -->
-                <div class="col-12 col-lg-8">
-                    <div class="single_widget_area">
-                        <!-- Footer Menu -->
-                        <div class="footer_menu">
-                            <nav class="navbar navbar-expand-lg justify-content-end">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footerNavContent" aria-controls="footerNavContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                    <i class="fa fa-bars"></i>
-                                </button>
-                                <div class="collapse navbar-collapse" id="footerNavContent">
-                                    <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="index.html">Home</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="shop.html">Shop</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="product-details.html">Product</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="cart.html">Cart</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="checkout.html">Checkout</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </footer>
@@ -988,7 +1053,24 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script>
+        var which = 1;
+        function clickCounter(id) {
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("cart").innerHTML = localStorage.clickcount;
 
+                localStorage.setItem(id, which);
+            }
+        }
+        function incr(f) {
+            which = f;
+        }
+    </script>
 </body>
 
 </html>
